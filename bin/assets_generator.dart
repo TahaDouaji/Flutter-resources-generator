@@ -23,9 +23,11 @@ Future<void> main(List<String> args) async {
   var directory = Directory("assets/images");
 
   directory.listSync(recursive: false).toList().forEach((it) {
-    var name = it.path.replaceAll("\\", "/").split("/").last.split(".").first;
-    var path = it.path.replaceAll(" ", "_").replaceAll("\\", "/");
-    result += " final String $name = \"$path\";\n";
+    if (!it.path.contains("DS_Store")) {
+      var name = it.path.replaceAll("\\", "/").split("/").last.split(".").first;
+      var path = it.path.replaceAll(" ", "_").replaceAll("\\", "/");
+      result += " final String $name = \"$path\";\n";
+    }
   });
 
   result += " \n} \n \n";
