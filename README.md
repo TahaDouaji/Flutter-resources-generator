@@ -1,4 +1,4 @@
-# flutterresourcegenerator
+# Flutter Resource Generator
 
 Resource generator is a dart code file to generate static references to images & colors, to make dealing with assets files much easier since in this way we can have autocomplete feature also.
 
